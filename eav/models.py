@@ -336,7 +336,7 @@ class Value(models.Model):
     '''
 
     entity_ct = models.ForeignKey(ContentType, related_name='value_entities')
-    entity_id = models.IntegerField()
+    entity_id = models.CharField(max_length=64)
     entity = generic.GenericForeignKey(ct_field='entity_ct',
                                        fk_field='entity_id')
 
